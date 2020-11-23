@@ -1,0 +1,25 @@
+Toma Andrei 321CB
+OOP Homework 1
+________________________________________________________________________________________________________________________
+
+    I have chosen a basic implementation. I have 5 classes for the vehicles: Vehicle.Vehicle and Vehicle.Bike, Vehicle.Car, Vehicle.Motorcycle and Vehicle.Truck
+which inherit the Vehicle.Vehicle class and 3 classes for the map: Map.Map, Map.Restrictions and Map.Street and a Test class for testing the
+program (contains main method). Map.Street implements the Comparable interface for the abstraction and for the priority
+queue used for implementation of Dijkstra's algorithm. I implemented the map of the streets with a oriented weighted
+graph represented with a adjacency list. Also, in the main method the file is read, the commands are interpreted and
+executed and the map is created.
+
+    Dijkstra implementation (drive method from Map.Map):
+    I initialise the minimum distances array with the maximum integer value for every vertex, except the source vertex
+which is initialised with 0. The parent of the source will be considered to be -1. I extract elements from the priority
+queue until it is empty or until all the nodes have been extracted of the map have been extracted. If the priority queue
+is empty and the destination node was set then the minimum path to the destination node was found, else if the priority
+queue is empty and the destination have not been extracted then there is not a path from source to destination. When a
+node is extracted from the queue I iterate through all the neighbours of it and if I find a node that has not been
+settled and if the vehicle with the given gauge can pass the street I will see if the new distance is less than the
+actual distance. If it is update the distance array and the parent of the node. In final the node that has not been
+settled is added to the priority queue.
+
+    In final I print the path, if it exists, with the help of the recursion. I go from the destination node to the
+parent node until I come across the source node. When the source node exit from recursion and print the path from the
+source node to the destination node.
